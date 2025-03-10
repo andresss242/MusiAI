@@ -5,3 +5,4 @@ MusiAI es una aplicación que utiliza inteligencia artificial para generar compo
 
 ## Problema que Resuelve
 La creación de música original puede ser un proceso desafiante y largo. MusiAI automatiza este proceso utilizando modelos de IA, permitiendo que tanto músicos como personas sin formación musical generen canciones personalizadas en pocos minutos.
+## Integrantes del Equipo
