@@ -1,0 +1,86 @@
+# guitar_ai.py
+
+guitar_chords = {
+    "C": """
+    E|-0-
+    B|-1-
+    G|-0-
+    D|-2-
+    A|-3-
+    E|-x-
+    """,
+    "G": """
+    E|-3-
+    B|-3-
+    G|-0-
+    D|-0-
+    A|-2-
+    E|-3-
+    """,
+    "D": """
+    E|-2-
+    B|-3-
+    G|-2-
+    D|-0-
+    A|-x-
+    E|-x-
+    """,
+    "Em": """
+    E|-0-
+    B|-0-
+    G|-0-
+    D|-2-
+    A|-2-
+    E|-0-
+    """,
+    "Am": """
+    E|-0-
+    B|-1-
+    G|-2-
+    D|-2-
+    A|-0-
+    E|-x-
+    """,
+    "E": """
+    E|-0-
+    B|-0-
+    G|-1-
+    D|-2-
+    A|-2-
+    E|-0-
+    """,
+}
+
+common_progressions = {
+    "C": ["G", "Am", "F"],
+    "G": ["Em", "C", "D"],
+    "D": ["G", "Bm", "A"],
+    "Am": ["F", "C", "G"],
+    "Em": ["C", "G", "D"],
+}
+
+def suggest_progression(chord):
+    print(f"\nProgresión sugerida desde {chord}:")
+    progression = common_progressions.get(chord, [])
+    for next_chord in progression:
+        print(f"→ {next_chord}")
+
+def show_chord_diagram(chord):
+    diagram = guitar_chords.get(chord)
+    if diagram:
+        print(f"\nDiagrama para {chord}:\n{diagram}")
+    else:
+        print(f"\nNo tengo el diagrama para el acorde {chord}")
+
+def main():
+    print("🎸 Asistente de Guitarra IA 🎸")
+    while True:
+        chord = input("\nEscribe un acorde (ej: C, G, D, Em) o 'salir' para terminar: ").strip()
+        if chord.lower() == "salir":
+            print("¡Hasta luego!")
+            break
+        show_chord_diagram(chord)
+        suggest_progression(chord)
+
+if __name__ == "__main__":
+    main()
